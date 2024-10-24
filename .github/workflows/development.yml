@@ -24,5 +24,8 @@ jobs:
         with:
           node-version: 16
 
+      - name: "Install jest env jsdom"
+        run: npm install -D jest-environment-jsdom
+
       - name: "Run tests"
         run: npm test
