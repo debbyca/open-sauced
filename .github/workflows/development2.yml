@@ -1,0 +1,18 @@
+  lint:
+    name: Code standards
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v4
+
+      - name: "Setup node"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
+      - name: "Install eslint"          # Add this step
+        run: npm install -D eslint
+
+      - name: "Lint code"
+        run: npm run lint --if-present
