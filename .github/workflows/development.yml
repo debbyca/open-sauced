@@ -8,6 +8,8 @@ on:
       - synchronize
       - reopened
   push:
+     paths-ignore:    # Add this key and its child glob
+      - '**.md'    
   workflow_call:
 
 jobs:
